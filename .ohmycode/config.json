@@ -1,0 +1,29 @@
+{
+  "llm": {
+    "provider": "openai",
+    "model": "qwen3.5:27b",
+    "api_key": "111",
+    "base_url": "http://127.0.0.1:11434/v1"
+  },
+  "sandbox": {
+    "enabled": true,
+    "image": "python:3.11-slim",
+    "workspace_root": "/workspace",
+    "cpu_limit": "8.0",
+    "memory_limit": "8192m",
+    "pids_limit": 1024,
+    "network_enabled": true
+  },
+  "safety": {
+    "enabled": true,
+    "pause_on_severity": "medium",
+    "llm_reviewer": {
+      "enabled": true,
+      "provider": "openai",
+      "model": "lfm2:latest",
+      "api_key": "dev-key-123",
+      "base_url": "http://111.230.32.219:8000/v1",
+      "max_chars": 4000
+    }
+  }
+}
