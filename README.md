@@ -25,7 +25,7 @@ Special Thanks to [OhMyCode](https://github.com/AlphaLab-USTC/OhMyCode), for you
 
 🧬 **OhMyCode extends itself.** Tell **OhMyCode** to "add a tool that does X" and it edits *this* repo's source to build one — no plugin SDK, no API boundaries between you and the code.
 
-🪖
+🪖 **Sandbox + rule/LLM-driven censor** Run all command in your sandbox, keep your computer tidy and safe.
 
 <div align="center">
   <img src="assets/entry.png" alt="OhMyCode Main Entry" width="600">
@@ -179,28 +179,6 @@ You can also do it manually:
 - **Add a tool** — create `ohmycode/tools/my_tool.py`, auto-discovered. See `/add-tool` skill.
 - **Add a provider** — create `ohmycode/providers/my_provider.py`, auto-discovered. See `/add-provider` skill.
 - **Add a skill** — create `SKILL.md` in `.ohmycode/skills/`, `.claude/skills/`, `.agents/skills/`, or `~/.ohmycode/skills/` (searched in that order).
-
-## Project Structure
-
-```
-ohmycode/
-├── cli.py               # REPL + rendering
-├── core/
-│   ├── loop.py          # Conversation loop
-│   ├── messages.py      # Message types + streaming events
-│   ├── context.py       # Token counting + compression
-│   ├── permissions.py   # Permission pipeline
-│   └── system_prompt.py # System prompt assembly
-├── providers/           # OpenAI, Anthropic (auto-discovered)
-├── tools/               # 9 built-in tools (auto-discovered)
-├── skills/loader.py     # Skill scanner
-├── memory/memory.py     # B+-Tree memory + LLM extraction
-├── storage/conversation.py  # JSON persistence + resume
-└── config/config.py     # Four-layer config merge
-benchmarks/
-├── run_bench.py         # Benchmark harness (token tracking + scoring)
-└── suite.py             # 8 SWE-bench-style task definitions
-```
 
 ## Testing
 
